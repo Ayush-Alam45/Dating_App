@@ -26,14 +26,10 @@ export const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#080809] text-white selection:bg-[#FF3B5C] selection:text-white relative overflow-x-hidden">
-      
-      {/* Background Ambient Glowing Orbs */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#FF3B5C]/12 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#8F102B]/15 rounded-full blur-[150px] pointer-events-none -z-10" />
+    <div className="min-h-screen bg-transparent text-white selection:bg-[#C41527] selection:text-white relative overflow-x-hidden">
 
       {/* A. NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#080809]/80 backdrop-blur-xl border-b border-white/[0.08]">
+      <header className="sticky top-0 z-50 bg-[#08080a]/80 backdrop-blur-xl border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Logo size="lg" linkTo="/" />
 
@@ -59,23 +55,14 @@ export const LandingPage: React.FC = () => {
         </div>
       </header>
 
-      {/* B. HERO SECTION (Inspiring the reference design) */}
+      {/* B. HERO SECTION (Over continuous global background) */}
       <section className="relative pt-8 pb-20 lg:pt-16 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#121015] via-[#0b0b0e] to-[#080809] border border-white/10 p-6 sm:p-10 lg:p-16 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+          <div className="relative rounded-3xl overflow-hidden bg-[#121016]/75 backdrop-blur-2xl border border-white/10 p-6 sm:p-10 lg:p-16 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
             
-            {/* Cinematic Background Image with Red Lighting Vortex */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1920&q=80"
-                alt="Cinematic couple silhouette with dramatic lighting"
-                className="w-full h-full object-cover object-right md:object-center opacity-30 mix-blend-luminosity scale-105"
-              />
-              {/* Radial red energy wash */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#080809] via-[#080809]/85 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080809] via-transparent to-transparent" />
-              <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#FF3B5C]/25 rounded-full blur-[90px] pointer-events-none" />
-            </div>
+            {/* Subtle inner radial glow overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#8B0000]/20 rounded-full blur-[90px] pointer-events-none" />
 
             {/* Hero Left Content */}
             <div className="relative z-10 max-w-2xl space-y-6">

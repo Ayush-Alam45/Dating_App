@@ -22,59 +22,58 @@ export const SwipeControls: React.FC<SwipeControlsProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`flex items-center justify-center gap-4 sm:gap-6 py-4 ${className}`}>
+    <div className={`flex items-center justify-center gap-4 sm:gap-6 py-1.5 sm:py-2 flex-shrink-0 ${className}`}>
       {/* Undo Button (Optional) */}
       {onUndo && (
         <IconButton
           variant="glass"
-          size="md"
+          size="sm"
           label="Undo last action"
           onClick={onUndo}
           disabled={!canUndo || disabled}
-          className="text-amber-400 hover:text-amber-300"
+          className="w-10 h-10 text-amber-400 hover:text-amber-300"
         >
-          <Undo2 className="w-5 h-5" />
+          <Undo2 className="w-4 h-4" />
         </IconButton>
       )}
 
       {/* Pass Action (X) */}
       <IconButton
         variant="pass"
-        size="lg"
+        size="md"
         label="Pass candidate"
         onClick={onPass}
         disabled={disabled}
-        className="w-14 h-14"
+        className="w-11 h-11 sm:w-12 sm:h-12"
       >
-        <X className="w-6 h-6 text-zinc-300" />
+        <X className="w-5 h-5 text-zinc-300" />
       </IconButton>
 
-      {/* Primary Like Action (Heart) - glowing crimson circular button matching reference */}
+      {/* Primary Like Action (Heart) - glowing dark blood red circular button */}
       <IconButton
         variant="like"
-        size="xl"
+        size="lg"
         label="Like candidate"
         onClick={onLike}
         disabled={disabled}
-        className="w-16 h-16 shadow-[0_0_30px_rgba(255,59,92,0.6)]"
+        className="w-14 h-14 sm:w-15 sm:h-15 shadow-[0_0_25px_rgba(179,0,27,0.7)] hover:shadow-[0_0_35px_rgba(211,18,42,0.9)]"
       >
-        <Heart className="w-8 h-8 fill-white text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" />
+        <Heart className="w-7 h-7 fill-white text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" />
       </IconButton>
 
       {/* Super Like / Save Action (Star) */}
       {onSuperlike && (
         <IconButton
           variant="star"
-          size="lg"
+          size="md"
           label="Super like candidate"
           onClick={onSuperlike}
           disabled={disabled}
-          className="w-14 h-14"
+          className="w-11 h-11 sm:w-12 sm:h-12"
         >
-          <Star className="w-6 h-6 text-zinc-300 hover:text-amber-400" />
+          <Star className="w-5 h-5 text-zinc-300 hover:text-amber-400" />
         </IconButton>
       )}
     </div>
   );
 };
-

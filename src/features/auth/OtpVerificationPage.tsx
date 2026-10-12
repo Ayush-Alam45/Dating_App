@@ -105,10 +105,7 @@ export const OtpVerificationPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#080809] flex flex-col justify-center items-center p-4 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#FF3B5C]/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-[#8F102B]/20 rounded-full blur-[140px] pointer-events-none" />
+    <div className="min-h-screen bg-transparent flex flex-col justify-center items-center p-4 relative overflow-hidden">
 
       <div className="mb-8">
         <Logo size="lg" linkTo="/" />
