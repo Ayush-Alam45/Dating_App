@@ -24,7 +24,7 @@ export const Sidebar: React.FC = () => {
   return (
     <>
       {/* Desktop Sidebar (Persistent left panel 220-250px) */}
-      <aside className="hidden md:flex flex-col w-56 lg:w-64 h-screen sticky top-0 bg-[#080809]/80 backdrop-blur-xl border-r border-white/[0.08] p-5 justify-between select-none z-30">
+      <aside className="hidden md:flex flex-col w-56 lg:w-64 h-screen sticky top-0 bg-white/[0.04] backdrop-blur-2xl border-r border-white/[0.10] shadow-[4px_0_30px_rgba(0,0,0,0.5)] p-5 justify-between select-none z-30">
         <div className="space-y-8">
           {/* Logo */}
           <div className="pt-2 pl-2">
@@ -91,7 +91,7 @@ export const Sidebar: React.FC = () => {
       </aside>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-0 inset-x-0 h-16 bg-[#080809]/95 backdrop-blur-xl border-t border-white/10 px-4 flex items-center justify-around z-40">
+      <nav className="md:hidden fixed bottom-0 inset-x-0 h-16 bg-white/[0.06] backdrop-blur-2xl border-t border-white/[0.10] px-4 flex items-center justify-around z-40 shadow-[0_-4px_30px_rgba(0,0,0,0.5)]">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname.startsWith(item.path);

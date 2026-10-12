@@ -4,7 +4,7 @@ import { Logo } from '../../components/ui/Logo';
 import { Button } from '../../components/ui/Button';
 import { 
   Sparkles, ShieldCheck, HeartHandshake, Eye, ArrowRight, 
-  BrainCircuit, Sliders, Users, CheckCircle2, ChevronDown 
+  BrainCircuit, CheckCircle2
 } from 'lucide-react';
 import { useApp } from '../../store/appContext';
 
@@ -28,8 +28,8 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-[#C41527] selection:text-white relative overflow-x-hidden">
 
-      {/* A. NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#08080a]/80 backdrop-blur-xl border-b border-white/[0.08]">
+      {/* A. NAVBAR — glassmorphism */}
+      <header className="sticky top-0 z-50 bg-white/[0.04] backdrop-blur-2xl border-b border-white/[0.10] shadow-[0_4px_30px_rgba(0,0,0,0.4)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Logo size="lg" linkTo="/" />
 
@@ -42,7 +42,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={handleQuickDemo}
-              className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-white px-3 py-2 rounded-full hover:bg-white/5 transition-all"
+              className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-white px-3 py-2 rounded-full hover:bg-white/[0.08] backdrop-blur-md transition-all border border-transparent hover:border-white/10"
             >
               Live Demo Mode
             </button>
@@ -55,18 +55,18 @@ export const LandingPage: React.FC = () => {
         </div>
       </header>
 
-      {/* B. HERO SECTION (Over continuous global background) */}
+      {/* B. HERO SECTION */}
       <section className="relative pt-8 pb-20 lg:pt-16 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden bg-[#121016]/75 backdrop-blur-2xl border border-white/10 p-6 sm:p-10 lg:p-16 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+          <div className="relative rounded-3xl overflow-hidden bg-white/[0.04] backdrop-blur-2xl border border-white/[0.12] p-6 sm:p-10 lg:p-16 shadow-[0_8px_60px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.08)]">
             
-            {/* Subtle inner radial glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+            {/* Inner glow overlays */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none" />
             <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#8B0000]/20 rounded-full blur-[90px] pointer-events-none" />
 
             {/* Hero Left Content */}
             <div className="relative z-10 max-w-2xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.07] border border-white/[0.12] backdrop-blur-md text-xs font-semibold tracking-widest text-zinc-300 uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-[#FF3B5C]" />
                 <span>More Than Just Matches</span>
               </div>
@@ -102,7 +102,7 @@ export const LandingPage: React.FC = () => {
                 </a>
               </div>
 
-              {/* Avatar Cluster from reference */}
+              {/* Avatar Cluster */}
               <div className="flex items-center gap-3 pt-6 border-t border-white/10">
                 <div className="flex -space-x-2.5 overflow-hidden">
                   <img
@@ -128,10 +128,10 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Floating Glassmorphism Feature Badges (Matching reference right side) */}
+            {/* Floating Glassmorphism Feature Badges — right side */}
             <div className="hidden lg:flex flex-col gap-4 absolute top-12 right-12 z-10 w-72 pointer-events-none">
               
-              <div className="glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/10 animate-pulse-subtle">
+              <div className="bg-white/[0.07] backdrop-blur-xl p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/[0.12]">
                 <div className="w-10 h-10 rounded-xl bg-[#FF3B5C]/20 border border-[#FF3B5C]/30 flex items-center justify-center text-[#FF3B5C] flex-shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -141,7 +141,7 @@ export const LandingPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/10">
+              <div className="bg-white/[0.07] backdrop-blur-xl p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/[0.12]">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0">
                   <HeartHandshake className="w-5 h-5" />
                 </div>
@@ -151,7 +151,7 @@ export const LandingPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/10">
+              <div className="bg-white/[0.07] backdrop-blur-xl p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/[0.12]">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
                   <Eye className="w-5 h-5" />
                 </div>
@@ -167,7 +167,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* C. HOW IT WORKS */}
+      {/* C. HOW IT WORKS — glassmorphism cards */}
       <section id="how-it-works" className="py-20 border-t border-white/[0.06] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -183,45 +183,30 @@ export const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-[#FF3B5C]/30 transition-all duration-300 relative group">
-              <div className="w-12 h-12 rounded-2xl bg-[#FF3B5C]/15 border border-[#FF3B5C]/30 flex items-center justify-center text-[#FF3B5C] font-mono font-bold text-lg mb-6 group-hover:scale-105 transition-transform">
-                01
+            {[
+              { n: '01', title: 'Create Your Profile', desc: 'Share authentic photos, your genuine interests, relationship status, and personal aspirations. No superficial questionnaires.' },
+              { n: '02', title: 'Discover Compatible People', desc: 'Review candidates ranked by deep behavioral compatibility models. View transparent compatibility factor breakdowns before swiping.' },
+              { n: '03', title: 'Connect Through Mutual Interest', desc: 'When two people express mutual interest, a private match is formed. Initiate intentional conversations in a secure, respectful environment.' },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="p-8 rounded-3xl bg-white/[0.04] backdrop-blur-xl border border-white/[0.10] hover:border-[#FF3B5C]/40 hover:bg-white/[0.07] transition-all duration-300 group shadow-[0_4px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_40px_rgba(196,21,39,0.15)]"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#FF3B5C]/15 border border-[#FF3B5C]/30 flex items-center justify-center text-[#FF3B5C] font-mono font-bold text-lg mb-6 group-hover:scale-105 transition-transform">
+                  {step.n}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{step.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Create Your Profile</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Share authentic photos, your genuine interests, relationship status, and personal aspirations. No superficial questionnaires.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-[#FF3B5C]/30 transition-all duration-300 relative group">
-              <div className="w-12 h-12 rounded-2xl bg-[#FF3B5C]/15 border border-[#FF3B5C]/30 flex items-center justify-center text-[#FF3B5C] font-mono font-bold text-lg mb-6 group-hover:scale-105 transition-transform">
-                02
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Discover Compatible People</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Review candidates ranked by deep behavioral compatibility models. View transparent compatibility factor breakdowns before swiping.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-[#FF3B5C]/30 transition-all duration-300 relative group">
-              <div className="w-12 h-12 rounded-2xl bg-[#FF3B5C]/15 border border-[#FF3B5C]/30 flex items-center justify-center text-[#FF3B5C] font-mono font-bold text-lg mb-6 group-hover:scale-105 transition-transform">
-                03
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Connect Through Mutual Interest</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                When two people express mutual interest, a private match is formed. Initiate intentional conversations in a secure, respectful environment.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* D. ABOUT VÉLORA & RESEARCH FRAMEWORK */}
-      <section id="about-app" className="py-20 border-t border-white/[0.06] bg-[#0c0c0e]/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about-app" className="py-20 border-t border-white/[0.06] relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0e]/40 to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             <div className="space-y-6">
@@ -236,51 +221,28 @@ export const LandingPage: React.FC = () => {
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#FF3B5C]/20 text-[#FF3B5C] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
+                {[
+                  { title: 'Personalized Recommendations', desc: 'Dynamically adapts recommendation sequences to individual value orientations.' },
+                  { title: 'Behavioral Compatibility Analysis', desc: 'Examines communication rhythm, lifestyle pacing, and long-term aspirational goals.' },
+                  { title: 'Explainable AI Insights', desc: 'Transparent factor breakdowns provide clear rationale behind candidate suitability.' },
+                  { title: 'User-Controlled Privacy', desc: 'Complete sovereignty over your data, photo visibility, and conversation boundaries.' },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#FF3B5C]/20 text-[#FF3B5C] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                      <p className="text-xs text-zinc-400">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white">Personalized Recommendations</h4>
-                    <p className="text-xs text-zinc-400">Dynamically adapts recommendation sequences to individual value orientations.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#FF3B5C]/20 text-[#FF3B5C] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white">Behavioral Compatibility Analysis</h4>
-                    <p className="text-xs text-zinc-400">Examines communication rhythm, lifestyle pacing, and long-term aspirational goals.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#FF3B5C]/20 text-[#FF3B5C] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white">Explainable AI Insights</h4>
-                    <p className="text-xs text-zinc-400">Transparent factor breakdowns provide clear rationale behind candidate suitability.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#FF3B5C]/20 text-[#FF3B5C] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white">User-Controlled Privacy</h4>
-                    <p className="text-xs text-zinc-400">Complete sovereignty over your data, photo visibility, and conversation boundaries.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Graphic card */}
-            <div className="p-8 rounded-3xl bg-[#141418] border border-white/10 relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF3B5C]/15 rounded-full blur-3xl pointer-events-none" />
+            {/* Glassmorphism metric card */}
+            <div className="p-8 rounded-3xl bg-white/[0.05] backdrop-blur-2xl border border-white/[0.12] relative overflow-hidden shadow-[0_8px_50px_rgba(0,0,0,0.6)]">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF3B5C]/10 rounded-full blur-3xl pointer-events-none" />
               
               <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
                 <div className="flex items-center gap-3">
@@ -296,35 +258,21 @@ export const LandingPage: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                  <div className="flex justify-between text-xs font-medium mb-1.5">
-                    <span className="text-zinc-300">Emotional & Communication Harmony</span>
-                    <span className="text-[#FF3B5C]">94%</span>
+                {[
+                  { label: 'Emotional & Communication Harmony', value: 94 },
+                  { label: 'Life Goals & Family Orientation', value: 91 },
+                  { label: 'Intellectual & Creative Rhythm', value: 89 },
+                ].map((item) => (
+                  <div key={item.label} className="p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
+                    <div className="flex justify-between text-xs font-medium mb-1.5">
+                      <span className="text-zinc-300">{item.label}</span>
+                      <span className="text-[#FF3B5C]">{item.value}%</span>
+                    </div>
+                    <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#FF3B5C] to-[#C41527]" style={{ width: `${item.value}%` }} />
+                    </div>
                   </div>
-                  <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF3B5C] w-[94%]" />
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                  <div className="flex justify-between text-xs font-medium mb-1.5">
-                    <span className="text-zinc-300">Life Goals & Family Orientation</span>
-                    <span className="text-[#FF3B5C]">91%</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF3B5C] w-[91%]" />
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                  <div className="flex justify-between text-xs font-medium mb-1.5">
-                    <span className="text-zinc-300">Intellectual & Creative Rhythm</span>
-                    <span className="text-[#FF3B5C]">89%</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF3B5C] w-[89%]" />
-                  </div>
-                </div>
+                ))}
               </div>
 
               <p className="text-[11px] text-zinc-500 mt-6 italic">
@@ -337,11 +285,10 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* E. FOOTER */}
-      <footer className="border-t border-white/[0.08] bg-[#060607] py-12">
+      <footer className="border-t border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/[0.08]">
             <Logo size="md" linkTo="/" />
-
             <div className="flex flex-wrap items-center gap-6 text-xs text-zinc-400">
               <a href="#about-app" className="hover:text-white transition-colors">About</a>
               <a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a>
@@ -350,7 +297,6 @@ export const LandingPage: React.FC = () => {
               <a href="#contact" className="hover:text-white transition-colors">Contact</a>
             </div>
           </div>
-
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
             <p>© 2026 VÉLORA. All rights reserved. A Deep Learning Matrimonial Match Recommendation Project.</p>
             <p className="font-mono text-[11px]">Designed with Cinematic Red Noir Aesthetics</p>
@@ -361,4 +307,3 @@ export const LandingPage: React.FC = () => {
     </div>
   );
 };
-

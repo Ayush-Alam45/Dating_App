@@ -32,38 +32,53 @@
 }
 
 @layer utilities {
+  /* ── Background utility ── */
   .app-blood-bg {
     background-image: 
       radial-gradient(circle at 50% 20%, rgba(139, 0, 0, 0.28) 0%, rgba(5, 5, 7, 0.88) 75%),
       linear-gradient(180deg, rgba(5, 5, 7, 0.72) 0%, rgba(5, 5, 7, 0.94) 100%),
-      url('/bg.jpg');
+      url('/second.png');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
 
+  /* ── Glassmorphism Cards ── */
   .glass-card {
-    background: rgba(18, 14, 18, 0.72);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card-dark {
+    background: rgba(8, 8, 9, 0.60);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   }
 
   .glass-card-hover {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .glass-card-hover:hover {
-    border-color: rgba(179, 0, 27, 0.45);
-    box-shadow: 0 10px 30px -10px rgba(139, 0, 0, 0.35);
+    border-color: rgba(196, 21, 39, 0.40);
+    box-shadow: 0 12px 40px rgba(139, 0, 0, 0.30), inset 0 1px 0 rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.07);
   }
 
+  /* ── Glassmorphism Pill ── */
   .glass-pill {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
   }
 
+  /* ── Red Glow Button ── */
   .red-glow-btn {
     background: linear-gradient(135deg, #B3001B 0%, #660000 100%);
     box-shadow: 0 4px 22px rgba(179, 0, 27, 0.55);
@@ -74,11 +89,37 @@
     transform: translateY(-1px);
   }
 
+  /* ── Ambient Glow Blobs ── */
   .ambient-glow {
     position: absolute;
     border-radius: 9999px;
     filter: blur(90px);
     pointer-events: none;
     z-index: 0;
+  }
+
+  /* ── Glassmorphism Panel (for modals, dropdowns, panels) ── */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255,255,255,0.07);
+  }
+
+  /* ── Subtle shimmer on glass surfaces ── */
+  .glass-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    pointer-events: none;
   }
 }
